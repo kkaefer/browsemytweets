@@ -40,4 +40,14 @@ post('/api/post_tweets', function() {
   post_tweets.handle.call(this);
 });
 
+get('/loading/:username', function(username){
+  this.render('loading.html.haml',{
+    locals: {
+      username: username,
+      javascript: 'loading.js'      
+    }    
+  })
+})
+
+
 run()
