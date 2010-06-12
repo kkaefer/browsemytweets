@@ -1,6 +1,11 @@
+
+require.paths.unshift(__dirname + '/plugins')
+
 var kiwi = require('kiwi')
 kiwi.require('express')
 require('express/plugins')
+
+
 
 configure(function(){
   set('root', __dirname)
@@ -29,5 +34,10 @@ get('/:username', function(username){
     }    
   })
 })
+
+post('/api/post_tweets', function() {
+  var post_tweets = require('./lib/post_tweets');
+  post_tweets.handle.call(this);
+});
 
 run()
