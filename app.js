@@ -30,4 +30,13 @@ get('/:username', function(username){
   })
 })
 
+get('/loading/:username', function(username){
+  this.render('loading.html.haml',{
+    locals: {
+      username: username,
+      javascript: 'loading.js'      
+    }    
+  })
+})
+
 run()

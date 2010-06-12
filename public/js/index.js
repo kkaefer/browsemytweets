@@ -1,7 +1,7 @@
 // On form submit redirect to /{username}
 $(function(){
   $("#form").submit(function(){
-    window.location.href = "/" + $("#username").val();
+    window.location.href = "/loading/" + $("#username").val();
     return false;
   });  
 })
