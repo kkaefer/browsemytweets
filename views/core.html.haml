@@ -1,5 +1,5 @@
 #topbar.limitwidth
-  %img{ src:"", width:48, height:48 }
+  %img#avatar{ src:"", width:48, height:48 }
   %span#username= "@" + username
 -#
 #mainbar
@@ -12,3 +12,5 @@
 -#
 #content.limitwidth
   Loading...
+
+%input{type: 'hidden', id: 'username_hidden', value: username}  
