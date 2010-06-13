@@ -430,6 +430,7 @@
    <field name="type" type="string" indexed="true" stored="true" />
    <field name="tweet_id" type="long" indexed="true" stored="true" />
    <field name="user_id" type="long" indexed="true" stored="true" />
+   <field name="screen_name" type="text" indexed="true" stored="true" />
    <field name="links" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="text" type="text" indexed="true" stored="true" />
    <field name="client_name" type="text" indexed="true" stored="true" />

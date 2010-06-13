@@ -23,4 +23,8 @@ $(function() {
   // set image
   var avatar_url = "http://twivatar.azzag.co.uk/" + username + "/normal";
   $("#avatar").attr("src", avatar_url);
+
+
+
+  $('#main').load('/api/tweets/' + username + '?q=*')
 });

@@ -33,8 +33,9 @@ $(function(){
             // fetch more tweets
             fetchTweetsRecursively(page + 1);
 
+
             // send data to solr
-            $.post("/api/tweets", {tweets: JSON.stringify(data)}, function(){
+            $.post("/api/tweets", {tweets: JSON.stringify(data), screen_name: username}, function(){
               $("#tweets").append("Sent " + data.length + " to Solr<br />");
             })
 

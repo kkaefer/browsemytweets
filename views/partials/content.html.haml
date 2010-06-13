@@ -1,5 +1,5 @@
 #sidebar
-  != this.partial('facet.html.haml', { locals: { facets: facets } })
+  != this.partial('facet.html.haml', { locals: { facets: facets, as: 'facet' } })
 -#
 #main
-  != this.partial('tweets.html.haml', { locals: { tweets: tweets } })
+  != this.partial('tweets.html.haml', { locals: { tweets: tweets, as: 'tweet' } })

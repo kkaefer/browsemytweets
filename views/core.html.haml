@@ -1,7 +1,6 @@
 #topbar.limitwidth
   %img#avatar{ src:"", width:48, height:48 }
   %span#screen_name= "@" + username
-  %span#username= "@" + username
 -#
 #mainbar
   .limitwidth
@@ -12,6 +11,6 @@
       %input.submitbutton{ type: "submit", value: "Search", id: "submit" }
 -#
 #content.limitwidth
-  Loading...
+  != this.partial('content.html.haml', { locals: { tweets:[], facets: []}})
 
 %input{type: 'hidden', id: 'username_hidden', value: username}  
