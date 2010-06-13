@@ -445,6 +445,7 @@
    <field name="website" type="text" indexed="true" stored="true" />
    <field name="link_handler" type="string" indexed="true" stored="true" />
    <field name="playback_length" type="int" indexed="true" stored="true" />
+   <field name="original_tweet" type="string" indexed="false" stored="true" />
 
    <!-- Dynamic field definitions.  If a field name is not found, dynamicFields
         will be used if the name matches any of the patterns.
