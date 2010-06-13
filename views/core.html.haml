@@ -1,1 +1,14 @@
-%h1 We have fetched a shitload of tweets and display them here
+#topbar.limitwidth
+  %img{ src:"", width:48, height:48 }
+  %span#username @kkaefer
+-#
+#mainbar
+  .limitwidth
+    %h1
+      %a{ href: "/" } Browse My Tweets
+    %form#search{action: "#", method: "post", id: "form"}
+      %input.textfield{ type: "text", name: "q", id: "searchfield" }
+      %input.submitbutton{ type: "submit", value: "Search", id: "submit" }
+-#
+#content.limitwidth
+  != this.partial('content.html.haml')

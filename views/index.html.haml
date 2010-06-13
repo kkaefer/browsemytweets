@@ -1,5 +1,7 @@
-%h1 Please enter your Twitter User Name
-
-%form{action: "#", method: "post", id: "form"}
-  %input{type: "text", id: "username"}
-  %input{type: "submit", id: "submit"}
+#mainbar.center-vertically
+  .limitwidth
+    %h1
+      %a{ href: "/" } Browse My Tweets
+    %form#search{action: "#", method: "post", id: "form"}
+      %input.textfield{ type: "text", name: "q", id: "username" }
+      %input.submitbutton{ type: "submit", value: "Browse", id: "submit" }

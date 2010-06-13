@@ -15,6 +15,25 @@ var x = {
     "in_reply_to_status_id": 15099908654,
     "favorited": false
   },
+  
+  
+  "tweet": {
+    "id" : "tweet-0641723445",
+    "type": "tweet",
+    "user_id": 39472334,
+    "links": ["link-Kyerisdlhjsyuwer"],
+    "text": ["Here's a cool video: http://bit.ly/kSh3ks Check it out", "Gernot", "Gernot"],
+    "original_tweet": "",
+    "client_name": "Twitterrific",
+    "client_url": "http://twitterific.com",
+    "created_at": "Sun Aug 30 14:46:33 +0000 2009",
+    "hashtag": ['test', 'imho'],
+    "mentions": ["Gernot"],
+    "in_reply_to_user_id": 710613,
+    "in_reply_to_screen_name": "Gernot",
+    "in_reply_to_status_id": 15099908654,
+    "favorited": false
+  },
 
   "link": {
     "id": "link-Kyerisdlhjsyuwer", // (md5-hash of the url)
