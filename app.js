@@ -35,9 +35,13 @@ get('/:username', function(username){
   })
 })
 
-post('/api/post_tweets', function() {
+post('/api/tweets', function() {
   var post_tweets = require('./lib/post_tweets');
   post_tweets.handle.call(this);
+});
+
+get('/api/tweets/:username', function(username) {
+  
 });
 
 get('/loading/:username', function(username){
