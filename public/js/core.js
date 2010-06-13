@@ -25,6 +25,16 @@ $(function() {
   $("#avatar").attr("src", avatar_url);
 
 
+  $.get('/api/tweets/' + username, { q: '*' }, function(data) {
+    $('#main').html(data);
+  });
 
-  $('#main').load('/api/tweets/' + username + '?q=*')
+  $('#form').submit(function() {
+    $.get('/api/tweets/' + username, { q: $('#searchfield').val() }, function(data) {
+      $('#main').html(data);
+    });
+    $('#searchfield')[0].select();
+        
+    return false;
+  });
 });
