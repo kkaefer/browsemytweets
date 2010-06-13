@@ -35,7 +35,7 @@ $(function(){
                         
             // send data to solr
             $.post("/api/tweets", {tweets: JSON.stringify(data)}, function(){
-              $("#tweets").append("Sent to Solr<br />");  
+              $("#tweets").append("Sent " + data.length + " to Solr<br />");  
             })
             
             // update progress bar
@@ -66,7 +66,6 @@ $(function(){
           }
         },
         error: function(xhr){
-          debugger;
           if (xhr.status == 404 || xhr.status == 500 || xhr.status == 502) {
             this.tryCount++;
             if (this.tryCount <= this.retryLimit) {
@@ -77,7 +76,7 @@ $(function(){
             alert('We have tried ' + this.retryLimit + ' times and it is still not working. We give in. Sorry.');
             return;
           }
-        }
+        }     
       });
     } else {
       // stop recursion, because page limit hit
@@ -120,9 +119,6 @@ $(function(){
         $("#tweets").html("<h1>Sorry, but your Tweets are protected and we can't read them :(</h2>");
         $("#status").hide();
       }
-    },
-    error: function(xhr){
-      alert("error");
     }
   })
 })
