@@ -14,9 +14,9 @@ configure(function(){
   enable("show exceptions");  
 })
 
-get('/*.css', function(file){
-  this.render(file + '.css.sass', { layout: false });
-});
+// get('/*.css', function(file){
+//   this.render(file + '.css.sass', { layout: false });
+// });
 
 get('/', function(){
   this.render('index.html.haml',{
@@ -26,7 +26,9 @@ get('/', function(){
   })
 })
 
-get('/:username', function(username){
+get('/:username', function(username) {
+  
+  
   this.render('core.html.haml',{
     locals: {
       username: username,
@@ -41,7 +43,7 @@ post('/api/tweets', function() {
 });
 
 get('/api/tweets/:username', function(username) {
-  
+
 });
 
 get('/loading/:username', function(username){
