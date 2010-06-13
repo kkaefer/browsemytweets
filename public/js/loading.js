@@ -36,16 +36,16 @@ $(function(){
             
             // update progress bar
             
-            $("#tweets").append(page);
-            $(data).each(function(id, element){
-              $("#tweets").append("|");  
-            });      
-            $("#tweets").append(data.length);
-            $("#tweets").append("<br />");   
-            $("#tweets").append(data[0].text);  
-            $("#tweets").append("<br />");             
-            $("#tweets").append(data[data.length-1].text);               
-            $("#tweets").append("<br />");              
+            // $("#tweets").append(page);
+            // $(data).each(function(id, element){
+            //   $("#tweets").append("|");  
+            // });      
+            // $("#tweets").append(data.length);
+            // $("#tweets").append("<br />");   
+            // $("#tweets").append(data[0].text);  
+            // $("#tweets").append("<br />");             
+            // $("#tweets").append(data[data.length-1].text);               
+            // $("#tweets").append("<br />");              
             
             fetched_tweets += data.length;
             if(fetched_tweets >= max_tweets) {
@@ -60,7 +60,7 @@ $(function(){
           } else {
             // stop recursion, because no more tweets
           }
-        },
+        }
         // error: function(xhr, textStatus, errorThrown){
         //   
         //   if (xhr.status == 404 || xhr.status == 500 || xhr.status == 502) {
@@ -92,9 +92,9 @@ $(function(){
     type: "GET",
     success: function(data){
       $("#avatar").attr("src", data.profile_image_url);
-      $("#full_name").text(data.name);
-      $("#screen_name").text("(" + data.screen_name + ")");
-      $("#total-tweets-number").text(data.statuses_count);
+      //$("#full_name").text(data.name);
+      $("#username").text(data.screen_name);
+      //$("#total-tweets-number").text(data.statuses_count);
 
       $("#fetched-tweets").text('0');      
       if(data.statuses_count > max_tweets) {
@@ -106,7 +106,7 @@ $(function(){
       user_id = data.id;
       statuses_count = data.statuses_count;
       
-      if(!data.protected){
+      if(!data['protected']){
         // write user to datastore
         url = twitterAPI + "statuses/user_timeline.json"; 
         fetchTweetsRecursively(1);        
@@ -116,5 +116,5 @@ $(function(){
         $("#status").hide();
       }
     }
-  })
-})
+  });
+});
