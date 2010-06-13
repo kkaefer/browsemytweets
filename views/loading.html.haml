@@ -15,4 +15,8 @@
 -#
 %input{type: 'hidden', id: 'username', value: username}
 
-  
+#content.limitwidth
+  %p We are fetching your tweets at the moment. Please wait.
+  %p
+    If you don't want to wait anymore or no more Tweets are fetched click
+    %a{'href': '/' + username } here
