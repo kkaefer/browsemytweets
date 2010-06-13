@@ -10,8 +10,8 @@ require('express/plugins')
 configure(function(){
   set('root', __dirname)
   p = require("path").join(__dirname, "./public");
-  use(Static, { path:p });  
-  enable("show exceptions");  
+  use(Static, { path:p });
+  enable("show exceptions");
 })
 
 // get('/*.css', function(file){
@@ -22,18 +22,16 @@ get('/', function(){
   this.render('index.html.haml',{
     locals: {
       javascript: 'index.js'
-    }    
+    }
   })
 })
 
 get('/:username', function(username) {
-  
-  
   this.render('core.html.haml',{
     locals: {
       username: username,
-      javascript: 'core.js'      
-    }    
+      javascript: 'core.js'
+    }
   })
 })
 
@@ -42,16 +40,18 @@ post('/api/tweets', function() {
   post_tweets.handle.call(this);
 });
 
-get('/api/tweets/:username', function(username) {
 
+get('/api/tweets/:userid', function(userid) {
+  var get_tweets = require('./lib/get_solr_tweets');
+  get_tweets.handle.call(this, userid);
 });
 
 get('/loading/:username', function(username){
   this.render('loading.html.haml',{
     locals: {
       username: username,
-      javascript: 'loading.js'      
-    }    
+      javascript: 'loading.js'
+    }
   })
 })
 
