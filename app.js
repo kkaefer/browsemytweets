@@ -40,7 +40,6 @@ post('/api/tweets', function() {
   post_tweets.handle.call(this);
 });
 
-
 get('/api/tweets/:userid', function(userid) {
   var get_tweets = require('./lib/get_solr_tweets');
   get_tweets.handle.call(this, userid);
