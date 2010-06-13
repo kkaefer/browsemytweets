@@ -1,7 +1,9 @@
 %li.tweet
+  -#%pre
+  -#  != JSON.stringify(tweet)
   .icons
     %img{ src: "http://s.ytimg.com/yt/favicon-vfl147246.ico" }
   %p.text
-    Working on my bachelor's thesis http://www.youtube.com/watch?v=Mwbw9KF-ACY
+    = tweet.text
   .meta
-    10 days 8 hours ago
+    = tweet.created_at
