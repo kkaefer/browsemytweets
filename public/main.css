@@ -205,6 +205,7 @@ body {
 #main .tweet a {
   font-weight:bold;
   text-decoration:none;
+  color:black;
 }
 
 #main .tweet a:hover {

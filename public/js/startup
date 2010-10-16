@@ -1,0 +1,4 @@
+cd ~/code/apache-solr-1.4.1/example/
+java -jar start.jar
+
+node app.js
