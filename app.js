@@ -1,58 +1,56 @@
-
 require.paths.unshift(__dirname + '/plugins')
 
-var kiwi = require('kiwi')
-kiwi.require('express')
-require('express/plugins')
+var public_path = p = require("path").join("root", "./public");
+var express = require('express');
+var app = express.createServer();
 
+app.use(express.staticProvider(__dirname + '/public'));
+//express.static({ path: public_path }));
 
-
-configure(function(){
-  set('root', __dirname)
-  p = require("path").join(__dirname, "./public");
-  use(Static, { path:p });
-  enable("show exceptions");
+app.configure(function(){
+    //enable("show exceptions");
 })
 
 // get('/*.css', function(file){
 //   this.render(file + '.css.sass', { layout: false });
 // });
 
-get('/', function(){
-  this.render('index.html.haml',{
+app.get('/', function(req, res){
+  res.render('index.haml',{
+    layout: true,
     locals: {
       javascript: 'index.js'
     }
   })
 })
 
-get('/:username', function(username) {
-  this.render('core.html.haml',{
+app.get('/:username', function(req,res) {
+  res.render('core.haml',{
     locals: {
-      username: username,
+      username: req.params.username,
       javascript: 'core.js'
     }
   })
 })
 
-post('/api/tweets', function() {
+app.post('/api/tweets', function(req, res) {
   var post_tweets = require('./lib/post_tweets');
   post_tweets.handle.call(this);
 });
 
-get('/api/tweets/:userid', function(userid) {
+app.get('/api/tweets/:userid', function(req, res) {
   var get_tweets = require('./lib/get_solr_tweets');
-  get_tweets.handle.call(this, userid);
+  get_tweets.handle.call(this, req.params.userid);
 });
 
-get('/loading/:username', function(username){
-  this.render('loading.html.haml',{
+app.get('/loading/:username', function(req, res){
+  res.render('loading.haml',{
     locals: {
-      username: username,
+      username: req.params.username,
       javascript: 'loading.js'
     }
   })
 })
 
 
-run()
+app.listen(3001);
