@@ -31,12 +31,8 @@ body {
 
 #topbar #start_over a {
   color:black;
-  text-decoration:none;
 }
 
-#topbar #start_over a:hover {
-  text-decoration:underline;
-}
 
 #mainbar {
   height:57px;
@@ -65,7 +61,6 @@ body {
   padding:48px 0 10px 110px;
   font-size:42px;
   color:white;
-  text-decoration:none;
   font-weight:bold;
   letter-spacing:-1px;
   background:url(img/logo.png) no-repeat top left;
@@ -222,15 +217,16 @@ body {
 
 #main .tweet a {
   font-weight:bold;
-  text-decoration:none;
   color:black;
 }
 
-#main .tweet a:hover {
-  text-decoration:underline;
+a {
+  text-decoration:none;
 }
 
-
+a:hover {
+  text-decoration:underline;
+}
 
 
 
