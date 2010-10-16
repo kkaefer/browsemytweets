@@ -11,6 +11,6 @@
       %input.submitbutton{ type: "submit", value: "Search", id: "submit" }
 -#
 #content.limitwidth
-  != this.partial('content.html.haml', { locals: { tweets:[], facets: []}})
+  != partial('content.hamljs', { locals: { tweets:[], facets: []}})
 
 %input{type: 'hidden', id: 'username_hidden', value: username}  
