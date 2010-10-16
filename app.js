@@ -14,7 +14,6 @@ app.configure(function(){
 // });
 
 app.use(express.staticProvider(__dirname + '/public'));
-
 app.get('/', function(req, res){
   res.render('index.hamljs',{
     layout: true,
@@ -35,12 +34,12 @@ app.get('/:username', function(req,res) {
 
 app.post('/api/tweets', function(req, res) {
   var post_tweets = require('./lib/post_tweets');
-  post_tweets.handle.call(this);
+  post_tweets.handle.call(this, req, res);
 });
 
 app.get('/api/tweets/:userid', function(req, res) {
   var get_tweets = require('./lib/get_solr_tweets');
-  get_tweets.handle.call(this, req.params.userid);
+  get_tweets.handle.call(this, req, res, req.params.userid);
 });
 
 app.get('/loading/:username', function(req, res){
