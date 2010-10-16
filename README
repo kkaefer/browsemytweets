@@ -1,0 +1,6 @@
+
+
+
+Start ApacheSolr (with Homebrew install):
+  solr "`pwd`/solr"
+  (Make sure to use an absolute path for the instance dir)
