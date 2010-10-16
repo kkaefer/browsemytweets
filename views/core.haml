@@ -1,6 +1,7 @@
 #topbar.limitwidth
-  %img#avatar{ src:"", width:48, height:48 }
-  %a#screen_name{ href: 'http://twitter.com/' + username }= "@" + username
+  %a#profile_link{ href: 'http://twitter.com/' + username }
+    %img#avatar{ src:"", width:48, height:48 }
+    %span#screen_name= "@" + username
   %span#start_over
     %a{ href: "/" } start over
 -#

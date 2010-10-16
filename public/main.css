@@ -22,6 +22,11 @@ body {
   position:absolute;
 }
 
+#topbar #profile_link {
+  
+  text-decoration:none;
+}
+
 #topbar #start_over {
   position:absolute;
   font-size:12px;
@@ -64,6 +69,7 @@ body {
   font-weight:bold;
   letter-spacing:-1px;
   background:url(img/logo.png) no-repeat top left;
+  text-decoration:none;
 }
 
 #mainbar.center-vertically h1 {
