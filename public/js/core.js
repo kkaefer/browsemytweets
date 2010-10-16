@@ -52,6 +52,7 @@ $(function() {
 
   $('#form').submit(function() {
     $.get('/api/tweets/' + username, { q: $('#searchfield').val() }, function(data) {
+      console.log(data);
       $('#main').html(data).autolink();
     });
     $('#searchfield')[0].select();
