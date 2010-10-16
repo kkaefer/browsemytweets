@@ -5,6 +5,7 @@ var app = express.createServer();
 
 //express.static({ path: public_path }));
 
+app.use(express.bodyDecoder());
 app.register('.haml', require('hamljs'));
 
 app.configure(function(){
