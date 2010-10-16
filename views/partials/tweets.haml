@@ -1,2 +1,6 @@
-%ul.tweets
-  != partial('tweet.haml', { collection: tweets, as: 'tweet' })
+- if (tweets.length)
+  %ul.tweets
+    != partial('tweet.haml', { collection: tweets, as: 'tweet' })
+- if (!tweets.length)
+  %div.tweets
+    No tweets found.
