@@ -2,7 +2,8 @@
 
 $(function(){
   var twitterAPI = "http://api.twitter.com/1/";
-  var max_pages = 16; // 3200 tweets = 16 pages
+  //var max_pages = 16; // 3200 tweets = 16 pages
+  var max_pages = 1; //  1 call is enough for testing
   var tweets_per_call = 200; // 200 is twitter limit on this
   var retryLimit = 3;
 
