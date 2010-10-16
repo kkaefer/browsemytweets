@@ -1,6 +1,5 @@
 require.paths.unshift(__dirname + '/plugins')
 
-var public_path = path.join(path.dirname(__filename), 'public');
 var express = require('express');
 var app = express.createServer();
 
