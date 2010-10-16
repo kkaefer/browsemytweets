@@ -30,11 +30,22 @@ $(function() {
   });
 
   $('#form').submit(function() {
-    $.get('/api/tweets/' + username, { q: $('#searchfield').val() }, function(data) {
-      $('#main').html(data);
-    });
-    $('#searchfield')[0].select();
-        
+      $.ajax({
+        url: '/api/tweets/' + username,
+        data: { q: $('#searchfield').val() },
+        success: function(data) {
+          if (data)
+            $('#main').html(data);
+          else
+            $('#main').html('Request failed.');
+          $('#searchfield')[0].select();
+        },
+        error: function() {
+          $('#main').html('Request failed.');
+        }
+      });
+
+
     return false;
   });
 });
