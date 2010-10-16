@@ -1,2 +1,0 @@
-%ul.tweets
-  != partial('tweet.hamljs', { collection: tweets, as: 'tweet' })

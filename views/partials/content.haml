@@ -1,0 +1,5 @@
+#sidebar
+  != partial('facet.haml', { locals: { facets: facets, as: 'facet' } })
+-#
+#main
+  != partial('tweets.haml', { locals: { tweets: tweets, as: 'tweet' } })
