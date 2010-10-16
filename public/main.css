@@ -22,6 +22,22 @@ body {
   position:absolute;
 }
 
+#topbar #start_over {
+  position:absolute;
+  font-size:12px;
+  right:0;
+  top:3px;
+}
+
+#topbar #start_over a {
+  color:black;
+  text-decoration:none;
+}
+
+#topbar #start_over a:hover {
+  text-decoration:underline;
+}
+
 #mainbar {
   height:57px;
   border:solid black;
