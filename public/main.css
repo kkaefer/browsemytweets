@@ -207,11 +207,13 @@ body {
 #main .tweet .meta {
   margin:4px 0 0 24px;
   padding:0 0 8px 0;
-  font-size:14px; 
+  font-size:11px; 
   font-weight:300;
   color:#666;
   border-bottom:1px solid #ccc;
 }
+
+#main .tweet .meta a { color:inherit; font:inherit; }
 
 #main .tweet:last-child .meta {
   border-bottom:0;
