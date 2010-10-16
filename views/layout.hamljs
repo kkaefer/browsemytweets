@@ -2,9 +2,9 @@
 %html
   %head
     %title Browse My Tweets
-    %link{rel: 'stylesheet', href: '/public/main.css' }
+    %link{rel: 'stylesheet', href: 'main.css' }
     %script{type: "text/javascript", src: "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
-    %script{type: "text/javascript", src: "/public/js/" + javascript}
+    %script{type: "text/javascript", src: "/js/" + javascript}
   %body
     != body
 

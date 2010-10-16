@@ -1,10 +1,9 @@
 require.paths.unshift(__dirname + '/plugins')
 
-var public_path = p = require("path").join("root", "./public");
+var public_path = path.join(path.dirname(__filename), 'public');
 var express = require('express');
 var app = express.createServer();
 
-app.use(express.staticProvider(__dirname + '/public'));
 //express.static({ path: public_path }));
 
 app.configure(function(){
@@ -15,8 +14,10 @@ app.configure(function(){
 //   this.render(file + '.css.sass', { layout: false });
 // });
 
+app.use(express.staticProvider(__dirname + '/public'));
+
 app.get('/', function(req, res){
-  res.render('index.haml',{
+  res.render('index.hamljs',{
     layout: true,
     locals: {
       javascript: 'index.js'
@@ -25,7 +26,7 @@ app.get('/', function(req, res){
 })
 
 app.get('/:username', function(req,res) {
-  res.render('core.haml',{
+  res.render('core.hamljs',{
     locals: {
       username: req.params.username,
       javascript: 'core.js'
@@ -44,13 +45,14 @@ app.get('/api/tweets/:userid', function(req, res) {
 });
 
 app.get('/loading/:username', function(req, res){
-  res.render('loading.haml',{
+  res.render('loading.hamljs',{
     locals: {
       username: req.params.username,
       javascript: 'loading.js'
     }
   })
 })
+
 
 
 app.listen(3001);
