@@ -1,3 +1,14 @@
+Install
+  Install ApacheSolr (e.g. with `brew install solr`)
+
+  Install Scons (e.g. with `brew install scons`)
+
+  Clone http://github.com/polotek/libxmljs.git, 
+  run `make libxmljs.node`
+  and `npm install .`
+
+  Clone http://github.com/gsf/node-solr.git
+  and run `npm install .`
 
 
 
