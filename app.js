@@ -1,5 +1,5 @@
 require('lib');
-require.paths.unshift(__dirname + '/plugins')
+require.paths.unshift(__dirname + '/plugins');
 
 var express = require('express');
 var app = express.createServer();
@@ -11,7 +11,7 @@ app.register('.haml', require('hamljs'));
 
 app.configure(function(){
     //enable("show exceptions");
-})
+});
 
 // get('/*.css', function(file){
 //   this.render(file + '.css.sass', { layout: false });
@@ -24,8 +24,8 @@ app.get('/', function(req, res){
     locals: {
       javascript: 'index.js'
     }
-  })
-})
+  });
+});
 
 app.get('/:username', function(req,res) {
   res.render('core.haml',{
@@ -33,8 +33,8 @@ app.get('/:username', function(req,res) {
       username: req.params.username,
       javascript: 'core.js'
     }
-  })
-})
+  });
+});
 
 app.post('/api/tweets', function(req, res) {
   var post_tweets = require('./lib/post_tweets');
@@ -52,8 +52,8 @@ app.get('/loading/:username', function(req, res){
       username: req.params.username,
       javascript: 'loading.js'
     }
-  })
-})
+  });
+});
 
 
 
