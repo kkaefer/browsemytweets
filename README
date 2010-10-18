@@ -4,7 +4,7 @@ Install
   Install npm: `curl http://npmjs.org/install.sh | sh`
   Run `npm install http://github.com/polotek/libxmljs/tarball/master`
   Run `npm install http://github.com/gsf/node-solr/tarball/master`
-  Run `npm install http://github.com/kkaefer/lib/tarball/master`
+  Run `npm install http://github.com/kkaefer/lib.js/tarball/master`
 
 Run
   * ApacheSolr (with Homebrew install): solr "`pwd`/solr"
