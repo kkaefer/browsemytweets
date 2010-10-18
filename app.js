@@ -1,3 +1,4 @@
+require('lib');
 require.paths.unshift(__dirname + '/plugins')
 
 var express = require('express');

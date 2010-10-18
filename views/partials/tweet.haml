@@ -6,6 +6,7 @@
   %p.text
     != tweet.text
   .meta
-    Posted on
-    %a{ href: tweet.tweet_url }
-      = tweet.created_at
+    Posted
+    %a{ href: tweet.tweet_url, title: 'Posted on ' + tweet.created_at.format('d.m.Y H:i:s O') }
+      = tweet.created_at.ago().slice(0, 2).join(', ')
+      = ' ago'
