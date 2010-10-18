@@ -1,17 +1,11 @@
 Install
   Install ApacheSolr (e.g. with `brew install solr`)
-
   Install Scons (e.g. with `brew install scons`)
+  Install npm: `curl http://npmjs.org/install.sh | sh`
+  Run `npm install http://github.com/polotek/libxmljs/tarball/master`
+  Run `npm install http://github.com/gsf/node-solr/tarball/master`
 
-  Clone http://github.com/polotek/libxmljs.git, 
-  run `make libxmljs.node`
-  and `npm install .`
-
-  Clone http://github.com/gsf/node-solr.git
-  and run `npm install .`
-
-
-
-Start ApacheSolr (with Homebrew install):
-  solr "`pwd`/solr"
-  (Make sure to use an absolute path for the instance dir)
+Run
+  * ApacheSolr (with Homebrew install): solr "`pwd`/solr"
+    (Make sure to use an absolute path for the instance dir)
+  * `node app.js`
