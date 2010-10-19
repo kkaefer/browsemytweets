@@ -11,3 +11,5 @@ Run
   * ApacheSolr (with Homebrew install): solr "`pwd`/solr"
     (Make sure to use an absolute path for the instance dir)
   * `node app.js`
+  * Alternatively, you can install node-supervisor (`npm install supervisor`)
+    and execute `./run`
