@@ -1,0 +1,6 @@
+- if (entity.url)
+  a.link( href: entity.url, rel: "nofollow" )= entity.contents
+- if (entity.hashtag)
+  a.link( href: "http://twitter.com/search?q=%23" + entity.text, rel: "nofollow" )= entity.contents
+- if (entity.screen_name)
+  a.link( href: "http://twitter.com/" + entity.screen_name, rel: "nofollow" )= entity.contents

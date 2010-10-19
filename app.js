@@ -7,7 +7,6 @@ var app = express.createServer();
 //express.static({ path: public_path }));
 
 app.use(express.bodyDecoder());
-app.register('.haml', require('hamljs'));
 
 app.configure(function(){
     //enable("show exceptions");
@@ -19,7 +18,7 @@ app.configure(function(){
 
 app.use(express.staticProvider(__dirname + '/public'));
 app.get('/', function(req, res){
-  res.render('index.haml',{
+  res.render('index.jade',{
     layout: true,
     locals: {
       javascript: 'index.js'
@@ -28,7 +27,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/:username', function(req,res) {
-  res.render('core.haml',{
+  res.render('core.jade', {
     locals: {
       username: req.params.username,
       javascript: 'core.js'
@@ -47,7 +46,7 @@ app.get('/api/tweets/:userid', function(req, res) {
 });
 
 app.get('/loading/:username', function(req, res){
-  res.render('loading.haml',{
+  res.render('loading.jade', {
     locals: {
       username: req.params.username,
       javascript: 'loading.js'

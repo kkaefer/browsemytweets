@@ -1,0 +1,4 @@
+#sidebar
+  != partial('facet.jade', { locals: { facets: facets, as: 'facet' } })
+#main
+  != partial('tweets.jade', { locals: { tweets: tweets, as: 'tweet' } })

@@ -1,0 +1,19 @@
+#topbar.limitwidth
+  a#profile_link( href: 'http://twitter.com/' + username )
+    img#avatar( src:"", width:48, height:48 )
+    span#screen_name= "@" + username
+  span#start_over
+    a( href: "/" ) start over
+
+#mainbar
+  .limitwidth
+    h1
+      a( href: "/" + username ) Browse My Tweets
+    form#search(action: "#", method: "post", id: "form")
+      input.textfield( type: "text", name: "q", id: "searchfield" )
+      input.submitbutton( type: "submit", value: "Search", id: "submit" )
+
+#content.limitwidth
+  != partial('content.jade', { locals: { tweets:[], facets: [] } } )
+
+input(type: 'hidden', id: 'username_hidden', value: username)  

@@ -1,0 +1,6 @@
+- if (tweets.length)
+  ul.tweets
+    != partial('tweet.jade', { collection: tweets, as: 'tweet' })
+- if (!tweets.length)
+  div.tweets
+    | No tweets found.
