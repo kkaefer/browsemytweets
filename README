@@ -2,8 +2,8 @@ Install
   Install ApacheSolr (e.g. with `brew install solr`)
   Install Scons (e.g. with `brew install scons`)
   Install npm:       `curl http://npmjs.org/install.sh | sh`
+  Install express:   `npm install express`
   Install haml.js:   `npm install hamljs`
-  Install libxm.js:  `npm install http://github.com/polotek/libxmljs/tarball/master`
   Install node-solr: `npm install http://github.com/gsf/node-solr/tarball/master`
   Install lib.js:    `npm install http://github.com/kkaefer/lib.js/tarball/master`
 
